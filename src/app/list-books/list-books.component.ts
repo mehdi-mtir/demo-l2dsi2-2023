@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Book } from '../model/book';
 
 @Component({
@@ -6,7 +6,9 @@ import { Book } from '../model/book';
   templateUrl: './list-books.component.html',
   styleUrls: ['./list-books.component.css']
 })
-export class ListBooksComponent implements OnInit {
+export class ListBooksComponent implements OnInit, OnChanges {
+  @Input() filtre : string = "";
+
   books : Book[] = [
     new Book(1, "Power of habits", "Auteur 1", 20),
     new Book(2, "Atomic habits", "Auteur 2", 30),
@@ -15,6 +17,11 @@ export class ListBooksComponent implements OnInit {
   filtredBooks? : Book[];
 
   constructor() { }
+
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.filterBooks(this.filtre);
+  }
 
   filterBooks = (f : string)=>{
     this.filtredBooks = this.books.filter(

@@ -1,11 +1,4 @@
-<form>
-  <div class="mb-3">
-    <label for="recherche" class="form-label">Rechercher un livre</label>
-    <input type="text" id="recherche" name="recherche" #filtre />
-    <button class="btn btn-primary" (click)="filterBooks(filtre.value)">Rechercher</button>
-  </div>
-</form>
-
+<p>filtre : {{filtre}} </p>
 <button class="btn btn-success">Ajouter un livre</button>
 <table class="table table-striped">
   <thead>

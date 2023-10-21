@@ -1,0 +1,10 @@
+
+<form>
+  <div class="mb-3">
+    <label for="recherche" class="form-label">Rechercher un livre</label>
+    <input type="text" id="recherche" name="recherche" #filtreInput />
+    <button class="btn btn-primary" (click)="filterBooks(filtreInput.value)">Rechercher</button>
+  </div>
+</form>
+
+<app-list-books [filtre]="filtre"></app-list-books>

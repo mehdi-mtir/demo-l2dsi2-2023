@@ -8,13 +8,13 @@ import { Icar } from './icar';
 })
 export class AppComponent implements OnInit {
 
-  //title="Gestion des livres";
+  title="Gestion des livres";
 
-  cars:Array<Icar> = [
+  /*cars:Array<Icar> = [
     {make: 'bmw', model: 'm3'},
     {make: 'porsche', model: '911'},
     {make: 'bmw', model: 'm3'}
-    ];
+    ];*/
 
   ngOnInit(): void {
 

@@ -1,6 +1,7 @@
 <div class="container">
-  <h1>{{title}}</h1>
-  <app-search></app-search>
-</div>
+  <!--h1>{{title}}</h1>
+  <app-search></app-search-->
 
-<!--app-car *ngFor="let car of cars" [carToShow]="car"></app-car-->
+
+<app-car *ngFor="let car of cars" [carToShow]="car" (carDelete)="deleteCar($event)"></app-car>
+</div>

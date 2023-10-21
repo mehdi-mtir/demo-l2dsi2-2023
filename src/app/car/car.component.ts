@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Icar } from '../icar';
 
 @Component({
@@ -8,8 +8,13 @@ import { Icar } from '../icar';
 })
 export class CarComponent implements OnInit {
   @Input() carToShow! : Icar;
+  @Output() carDelete = new EventEmitter<Icar>();
 
   constructor() { }
+
+  delete = (car : Icar)=>{
+    this.carDelete.emit(car);
+  }
 
   ngOnInit(): void {
   }
